@@ -1,0 +1,44 @@
+# データはアップロードしないようにする．
+data/
+# Jupyterのチェックポイント
+.ipynb_checkpoints/
+
+# Python関係
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.env
+.venv/
+
+# Jupyter Notebooksの出力
+.ipynb_checkpoints/
+
+# VSCode設定
+.vscode/
+
+# QGIS2Web 出力（Leafletマップ）
+app/static/qgis_map/
+
+# shapefile などGISファイル群
+*.shp
+*.shx
+*.dbf
+*.prj
+*.sbn
+*.sbx
+*.cpg
+*.shp.xml
+
+# zipや一時ファイル
+*.zip
+*.tar.gz
+*.swp
+.DS_Store
+
+
+# 大容量データ除外
+app/static/qgis_map/**/data/
+data/bus_stop/
+data/bus_rout/
+
