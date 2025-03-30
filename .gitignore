@@ -1,52 +1,64 @@
-# データはアップロードしないようにする．
-data/
-# Jupyterのチェックポイント
-.ipynb_checkpoints/
-
-# Python関係
+# =====================
+# Python関連
+# =====================
 __pycache__/
-*.pyc
+*.py[cod]
 *.pyo
 *.pyd
+*.ipynb_checkpoints
 .env
 .venv/
+.envrc
 
-# Jupyter Notebooksの出力
-.ipynb_checkpoints/
-
-# VSCode設定
+# =====================
+# VSCode/DevContainer
+# =====================
 .vscode/
+.devcontainer/
 
-# QGIS2Web 出力（Leafletマップ）
-app/static/qgis_map/
+# =====================
+# Terraform
+# =====================
+terraform/.terraform/
+terraform/terraform.tfstate
+terraform/terraform.tfstate.backup
+terraform/.terraform.lock.hcl
+terraform/*.tfstate*
+terraform/.terraform.lock.hcl
 
-# shapefile などGISファイル群
-*.shp
-*.shx
+# =====================
+# Jupyter Notebook出力
+# =====================
+*.ipynb_checkpoints
+*.nbconvert.ipynb
+
+# =====================
+# データ関連（大容量ファイルや中間生成物）
+# =====================
+*.zip
+*.tar.gz
+*.rar
+*.7z
+
+# 統計・マップ系中間ファイル
 *.dbf
+*.shx
 *.prj
 *.sbn
 *.sbx
 *.cpg
 *.shp.xml
 
-# zipや一時ファイル
-*.zip
-*.tar.gz
-*.swp
-.DS_Store
+# geojson大量生成系
+*.geojson
 
+# QGISプロジェクトファイル
+*.qgz
+*.qgs~
 
-# 大容量データ除外
-app/static/qgis_map/**/data/
-data/bus_stop/
-data/bus_rout/
-
-QGIS_mass.qgz
-
-# Terraform generated files
-.terraform/
-terraform.tfstate
-terraform.tfstate.backup
-
+# =====================
+# その他個別除外（確認済みの大容量ファイル）
+# =====================
+terraform/.terraform/providers/registry.terraform.io/hashicorp/aws/5.93.0/darwin_amd64/terraform-provider-aws_v5.93.0_x5
+major_results_2020.xlsx
 
