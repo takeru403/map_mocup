@@ -7,3 +7,4 @@ pyproj
 Flask
 matplotlib
 japanize_matplotlib
+scikit-learn
