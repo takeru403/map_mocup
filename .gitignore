@@ -42,3 +42,4 @@ app/static/qgis_map/**/data/
 data/bus_stop/
 data/bus_rout/
 
+QGIS_mass.qgz

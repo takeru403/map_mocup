@@ -5,3 +5,5 @@ jupyter
 shapely
 pyproj
 Flask
+matplotlib
+japanize_matplotlib
