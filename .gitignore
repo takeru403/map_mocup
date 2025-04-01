@@ -20,14 +20,39 @@ Thumbs.db
 # 出力画像やPDFなど（必要に応じて）
 *.png
 *.pdf
+*.log
 
 # QGISプロジェクトファイル（必要に応じて管理対象に含める）
 *.qgz
 
-# 大容量のマップ出力（QGIS→HTML）
+# QGIS Webエクスポート出力（大容量）
 app/static/qgis_map/
 
-# その他一時ファイルや出力物
+# 地理データ（サイズ大きいためGitではなくLFS推奨 or 除外）
+*.shp
+*.shx
+*.dbf
+*.prj
+*.geojson
+*.xml
+*.sbn
+*.sbx
+*.cpg
+
+# 出力用JavaScript等（qgis2webが生成）
+*.js
+
+# ノートブック一時ファイル
+*.ipynb_checkpoints/
+
+# 圧縮ファイル
 *.zip
-*.log
+
+# Webフォントやビルド生成物（必要に応じて）
+*.woff
+*.woff2
+*.ttf
+
+# PDF設計資料など（Gitで管理しないなら）
+*.pdf
 
