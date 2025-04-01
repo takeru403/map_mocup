@@ -3,16 +3,17 @@ name: Deploy to EC2
 on:
   push:
     branches:
-      - takeru 
+      - takeru  # このブランチに push されたとき実行
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout repo
+      - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Deploy to EC2
+      - name: Deploy to EC2 via SSH
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.HOST }}
@@ -20,6 +21,6 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
             cd /home/ec2-user/app
-            git pull origin main
+            git pull origin takeru
             sudo systemctl restart gunicorn
 
