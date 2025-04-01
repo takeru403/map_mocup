@@ -6,7 +6,7 @@
 
 以下はTerraformを用いたAWSでのインフラ構成を表したダイアグラムです。
 
-![AWS構成図](./terraform_diagram.png)
+![Image](https://github.com/user-attachments/assets/59e71686-28d9-4037-8129-386114f9c410)
 
 ## Requirement
 
