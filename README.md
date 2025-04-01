@@ -1,187 +1,73 @@
 # GISモックアプリ
 
-オープンソースのGISデータを使ったモックアプリケーション
+公開されている地理情報 (GIS) データを元に、QGISでビジュアライズしたWebマップを表示するFlaskアプリです。
 
-# DEMO
+## デモ画像
 
-"hoge"の魅力が直感的に伝えわるデモ動画や図解を載せる
+以下はTerraformを用いたAWSでのインフラ構成を表したダイアグラムです。
 
-# Features
+![AWS構成図](./terraform_diagram.png)
 
-"hoge"のセールスポイントや差別化などを説明する
+## Requirement
 
-# Requirement
+Pythonパッケージリストは次のとおりです (一部抽出):
 
-"hoge"を動かすのに必要なライブラリなどを列挙する
+- Flask 3.1.0
+- geopandas 1.0.1
+- folium 0.19.5
+- pyproj 3.7.1
+- shapely 2.0.7
+- matplotlib 3.10.1
+- pandas 2.2.3
 
-anyio                     4.9.0
-argon2-cffi               23.1.0
-argon2-cffi-bindings      21.2.0
-arrow                     1.3.0
-asttokens                 3.0.0
-async-lru                 2.0.5
-attrs                     25.3.0
-babel                     2.17.0
-beautifulsoup4            4.13.3
-bleach                    6.2.0
-blinker                   1.9.0
-branca                    0.8.1
-certifi                   2025.1.31
-cffi                      1.17.1
-charset-normalizer        3.4.1
-click                     8.1.8
-comm                      0.2.2
-contourpy                 1.3.1
-cycler                    0.12.1
-debugpy                   1.8.13
-decorator                 5.2.1
-defusedxml                0.7.1
-exceptiongroup            1.2.2
-executing                 2.2.0
-fastjsonschema            2.21.1
-Flask                     3.1.0
-folium                    0.19.5
-fonttools                 4.56.0
-fqdn                      1.5.1
-geopandas                 1.0.1
-h11                       0.14.0
-httpcore                  1.0.7
-httpx                     0.28.1
-idna                      3.10
-ipykernel                 6.29.5
-ipython                   8.34.0
-ipywidgets                8.1.5
-isoduration               20.11.0
-itsdangerous              2.2.0
-japanize-matplotlib       1.1.3
-jedi                      0.19.2
-Jinja2                    3.1.6
-joblib                    1.4.2
-json5                     0.10.0
-jsonpointer               3.0.0
-jsonschema                4.23.0
-jsonschema-specifications 2024.10.1
-jupyter                   1.1.1
-jupyter_client            8.6.3
-jupyter-console           6.6.3
-jupyter_core              5.7.2
-jupyter-events            0.12.0
-jupyter-lsp               2.2.5
-jupyter_server            2.15.0
-jupyter_server_terminals  0.5.3
-jupyterlab                4.3.6
-jupyterlab_pygments       0.3.0
-jupyterlab_server         2.27.3
-jupyterlab_widgets        3.0.13
-kiwisolver                1.4.8
-MarkupSafe                3.0.2
-matplotlib                3.10.1
-matplotlib-inline         0.1.7
-mistune                   3.1.3
-mpmath                    1.3.0
-nbclient                  0.10.2
-nbconvert                 7.16.6
-nbformat                  5.10.4
-nest-asyncio              1.6.0
-networkx                  3.4.2
-notebook                  7.3.3
-notebook_shim             0.2.4
-numpy                     2.2.4
-overrides                 7.7.0
-packaging                 24.2
-pandas                    2.2.3
-pandocfilters             1.5.1
-parso                     0.8.4
-pexpect                   4.9.0
-pillow                    11.1.0
-pip                       25.0.1
-platformdirs              4.3.7
-powerlaw                  1.5
-prometheus_client         0.21.1
-prompt_toolkit            3.0.50
-psutil                    7.0.0
-ptyprocess                0.7.0
-pure_eval                 0.2.3
-pycparser                 2.22
-Pygments                  2.19.1
-pyogrio                   0.10.0
-pyparsing                 3.2.3
-pyproj                    3.7.1
-python-dateutil           2.9.0.post0
-python-json-logger        3.3.0
-python-louvain            0.16
-pytz                      2025.2
-PyYAML                    6.0.2
-pyzmq                     26.3.0
-referencing               0.36.2
-requests                  2.32.3
-rfc3339-validator         0.1.4
-rfc3986-validator         0.1.1
-rpds-py                   0.24.0
-scikit-learn              1.6.1
-scipy                     1.15.2
-Send2Trash                1.8.3
-setuptools                65.5.1
-shapely                   2.0.7
-six                       1.17.0
-sniffio                   1.3.1
-soupsieve                 2.6
-stack-data                0.6.3
-terminado                 0.18.1
-threadpoolctl             3.6.0
-tinycss2                  1.4.0
-tomli                     2.2.1
-tornado                   6.4.2
-traitlets                 5.14.3
-types-python-dateutil     2.9.0.20241206
-typing_extensions         4.13.0
-tzdata                    2025.2
-uri-template              1.3.0
-urllib3                   2.3.0
-wcwidth                   0.2.13
-webcolors                 24.11.1
-webencodings              0.5.1
-websocket-client          1.8.0
-Werkzeug                  3.1.3
-wheel                     0.45.1
-widgetsnbextension        4.0.13
-xyzservices               2025.1.0
+すべての依存パッケージは `requirements.txt` に記述されています。
 
-# Installation
+## Installation
 
-Requirementで列挙したライブラリなどのインストール方法を説明する
+### 1. ローカルランチ
 
 ```bash
-pip install huga_package
+git clone git@github.com:takeru403/map_mocup.git
+cd app
+python app.py
 ```
 
-# Usage
+以下のURLでローカル端末で動作を確認できます:
 
-DEMOの実行方法など、"hoge"の基本的な使い方を説明する
+```
+http://127.0.0.1:5000
+```
+
+### 2. Docker + Devcontainer 環境
 
 ```bash
-git clone https://github.com/hoge/~
-cd examples
-python demo.py
+cd .devcontainer
+docker compose up
 ```
 
-# Note
+### 3. EC2へのデプロイ
 
-注意点などがあれば書く
+GitHub Actions と Terraform を用いて自動デプロイが可能です
 
-# Author
+#### 直接EC2でプルして再起動:
 
-作成情報を列挙する
+```bash
+ssh -i ~/.ssh/my-key.pem ec2-user@xx.xx.xx.xx
+cd /home/ec2-user/app
+git pull origin takeru
+sudo systemctl restart gunicorn
+```
 
-* 作成者
-* 所属
-* E-mail
+## 構成
 
-# License
-ライセンスを明示する
+- `app/` : Flask本体
+- `static/` : QGISから出力したWebMap
+- `templates/` : HTMLテンプレート (map.html)
+- `terraform/` : AWS構成用Terraform
+- `notebook/` : Jupyter Notebook
+- `data/` : GISデータ
 
-"hoge" is under [MIT license](https://en.wikipedia.org/wiki/MIT_License).
+## Author
 
-社内向けなら社外秘であることを明示してる
-
-"hoge" is Confidential.
+- 土屋 健 (Takeru Tsuchiya)
+- Contact: tata.5593@gmail.com
