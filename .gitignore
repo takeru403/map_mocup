@@ -26,7 +26,7 @@ Thumbs.db
 *.qgz
 
 # QGIS Webエクスポート出力（大容量）
-app/static/qgis_map/
+#app/static/qgis_map/
 
 # 地理データ（サイズ大きいためGitではなくLFS推奨 or 除外）
 *.shp
