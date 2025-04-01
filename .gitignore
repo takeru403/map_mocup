@@ -1,67 +1,33 @@
-# =====================
 # Python関連
-# =====================
 __pycache__/
-*.py[cod]
-*.pyo
-*.pyd
-*.ipynb_checkpoints
-.env
-.venv/
-.envrc
+*.pyc
 
-# =====================
-# VSCode/DevContainer
-# =====================
+# Jupyter Notebookチェックポイント
+.ipynb_checkpoints/
+
+# VSCode関連
 .vscode/
-.devcontainer/
 
-# =====================
-# Terraform
-# =====================
-terraform/.terraform/
-terraform/terraform.tfstate
-terraform/terraform.tfstate.backup
-terraform/.terraform.lock.hcl
-terraform/*.tfstate*
-terraform/.terraform.lock.hcl
+# Terraform一時ファイル
+terraform.tfstate
+terraform.tfstate.backup
+.terraform/
 
-# =====================
-# Jupyter Notebook出力
-# =====================
-*.ipynb_checkpoints
-*.nbconvert.ipynb
-
-# =====================
-# データ関連（大容量ファイルや中間生成物）
-# =====================
-*.zip
-*.tar.gz
-*.rar
-*.7z
-
-# 統計・マップ系中間ファイル
-*.dbf
-*.shx
-*.prj
-*.sbn
-*.sbx
-*.cpg
-*.shp.xml
-
-# geojson大量生成系
-*.geojson
-
-# QGISプロジェクトファイル
-*.qgz
-*.qgs~
-
-# =====================
-# その他個別除外（確認済みの大容量ファイル）
-# =====================
-terraform/.terraform/providers/registry.terraform.io/hashicorp/aws/5.93.0/darwin_amd64/terraform-provider-aws_v5.93.0_x5
-major_results_2020.xlsx
-
+# OSによる不要ファイル
 .DS_Store
+Thumbs.db
+
+# 出力画像やPDFなど（必要に応じて）
+*.png
+*.pdf
+
+# QGISプロジェクトファイル（必要に応じて管理対象に含める）
+*.qgz
+
+# 大容量のマップ出力（QGIS→HTML）
 app/static/qgis_map/
-data/
+
+# その他一時ファイルや出力物
+*.zip
+*.log
+
